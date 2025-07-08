@@ -85,14 +85,83 @@
             border-radius: 8px;
             z-index: 1001;
         }
+
+
+        .download-btn-container {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .best-player-btn {
+            /* Основные стили */
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            
+            /* Анимация при наведении */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .best-player-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%);
+        }
+
+        .best-player-btn:active {
+            transform: translateY(1px);
+        }
+
+
+
+        .modal-content {
+        position: relative; /* Добавьте это */
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 500px;
+        }
+
+        /* Стили для кнопки закрытия */
+        .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #aaa;
+        transition: 0.3s;
+        }
+
+        .close-btn:hover {
+        color: #333;
+        }
+
+
+
+
     </style>
 </head>
 
 
 <!-- Сами картиночки -->
 <body>
-    <div class="text-container">
-        <a href="messi.jpeg" download="lionel.jpeg">Лучший игрок</a>
+    <div class="download-btn-container">
+        <a href="messi.jpeg" download="lionel.jpeg" class="best-player-btn">
+            Лучший игрок
+        </a>
     </div>
     
     <div class="image-container">
@@ -104,21 +173,25 @@
     <!-- Модальное окно формы -->
     <div id="formModal" class="modal">
         <div class="modal-content">
+
+            <span class="close-btn">&times;</span> <!-- Кнопка закрытия -->
+
             <h2>Регистрация</h2>
             <form id="registrationForm"   action="https://formspree.io/f/mgvyqrbk" 
                 method="POST">
                 <input type="hidden" name="_subject" value="Новая регистрация - Хочу быть как Роналду!">
                 <input type="hidden" name="_language" value="ru">
+
+                <div class="form-group">
+                    <label for="lastName">Фамилия:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
                 
                 <div class="form-group">
                     <label for="firstName">Имя:</label>
                     <input type="text" id="firstName" name="firstName" required>
                 </div>
                 
-                <div class="form-group">
-                    <label for="lastName">Фамилия:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
                 
                 <div class="form-group">
                     <label for="middleName">Отчество:</label>
@@ -197,6 +270,26 @@
             .catch(error => {
                 alert('Произошла ошибка: ' + error.message);
             });
+        });
+
+
+        // Закрытие формы при клике на крестик
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('formModal').style.display = 'none';
+        });
+
+        // Закрытие при клике вне формы
+        document.getElementById('formModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('formModal').style.display = 'none';
+            }
         });
     </script>
 </body>
