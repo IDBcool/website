@@ -2,151 +2,169 @@
 <html lang="ru">
 
 
-<!-- Стили -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лучший игрок - Криштиану Роналду</title>
-
+    <title>Психолог Аня - профессиональная помощь</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 
-<!-- Собственно тело -->
+
+
 <body>
-    <div class="download-btn-container">
-        <a href="messi.jpeg" download="lionel.jpeg" class="best-player-btn">
-            Лучший игрок
-        </a>
-    </div>
-    
-    <div class="image-container">
-        <img src="https://s-cdn.sportbox.ru/images/styles/1200-auto/fp_fotos/bd/b0/95dd9d6c42d283d22a6ef81a48f850d2657879e3a203e325196686.jpg" alt="Криштиану Роналду">
-    </div>
-    
-    <button id="openFormBtn">Хочу быть как Криштиану</button>
-    
-    <!-- Модальное окно формы -->
-    <div id="formModal" class="modal">
+    <!-- 1. Фиксированная контактная панель -->
+    <header class="contact-bar">
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</span>
+            <span><i class="fas fa-envelope"></i> email@example.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> Город, Улица, Дом</span>
+        </div>
+        <button class="signup-btn" id="header-signup">Записаться</button>
+    </header>
+
+    <!-- 2. Основное приветствие -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="anya-photo.jpg" alt="Фото психолога Ани">
+        </div>
+        <div class="hero-content">
+            <h1>Аня, профессиональный психолог</h1>
+            <p>Приветствую вас на моём сайте. Я помогаю людям справляться с различными жизненными трудностями и находить внутреннюю гармонию.</p>
+            <p>Мой опыт работы - более 5 лет, я использую современные методы психотерапии, адаптированные под индивидуальные потребности каждого клиента.</p>
+            <button class="signup-btn">Узнать больше</button>
+        </div>
+    </section>
+
+    <!-- 3. Проблемы, с которыми работаем -->
+    <section class="problems-section">
+        <h2>С какими проблемами я могу помочь</h2>
+        <div class="problems-grid">
+            <!-- Пример одного элемента проблемы -->
+            <div class="problem-item" data-problem="1">
+                <img src="problem1.jpg" alt="Тревожность">
+                <h3>Тревожность и страхи</h3>
+                <div class="problem-details" id="problem-details-1">
+                    <p>Подробное описание работы с тревожными состояниями...</p>
+                </div>
+            </div>
+            <!-- Другие проблемы будут здесь -->
+        </div>
+    </section>
+
+    <!-- 4. Подходы в работе -->
+    <section class="approaches-section">
+        <h2>Мои подходы в работе</h2>
+        <div class="approaches-list">
+            <!-- Пример одного подхода -->
+            <div class="approach-item" data-approach="1">
+                <h3>Когнитивно-поведенческая терапия</h3>
+                <div class="approach-details" id="approach-details-1">
+                    <p>Подробное описание КПТ...</p>
+                </div>
+            </div>
+            <!-- Другие подходы будут здесь -->
+        </div>
+    </section>
+
+    <!-- 5. Форматы работы -->
+    <section class="formats-section">
+        <h2>Форматы работы</h2>
+        <div class="formats-grid">
+            <div class="format-item">
+                <h3>Индивидуальные сессии</h3>
+                <p>60 минут личной работы</p>
+                <button class="signup-btn format-signup">Записаться</button>
+            </div>
+            <div class="format-item">
+                <h3>Групповая терапия</h3>
+                <p>Работа в группе 90 минут</p>
+                <button class="signup-btn format-signup">Записаться</button>
+            </div>
+            <div class="format-item">
+                <h3>Серия консультаций</h3>
+                <p>Пакет из 5 сессий</p>
+                <button class="signup-btn format-signup">Записаться</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Образование -->
+    <section class="education-section">
+        <h2>Моё образование</h2>
+        <div class="diplomas">
+            <!-- Пример одного диплома -->
+            <div class="diploma-item">
+                <img src="diploma1.jpg" alt="Диплом 1">
+                <div class="diploma-info">
+                    <h3>Высшее психологическое образование</h3>
+                    <p>МГУ, факультет психологии, 2015-2020</p>
+                </div>
+            </div>
+            <!-- Другие дипломы будут здесь -->
+        </div>
+    </section>
+
+    <!-- 7. Отзывы -->
+    <section class="reviews-section">
+        <h2>Отзывы клиентов</h2>
+        <div class="reviews-carousel">
+            <div class="reviews-slide active">
+                <!-- Пример одного отзыва -->
+                <div class="review-item">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">Аня помогла мне справиться с тревожностью...</p>
+                    <p class="review-author">- Мария, 32 года</p>
+                </div>
+                <!-- Еще 2 отзыва в этом слайде -->
+            </div>
+            <div class="reviews-slide">
+                <!-- Следующие 3 отзыва -->
+            </div>
+            <!-- Навигация по отзывам -->
+            <div class="reviews-nav">
+                <button class="reviews-prev"><i class="fas fa-chevron-left"></i></button>
+                <span class="reviews-dots"></span>
+                <button class="reviews-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Форма регистрации -->
+    <section class="contact-form-section">
+        <h2>Остались вопросы или хотите записаться?</h2>
+        <form class="contact-form" id="main-contact-form">
+            <div class="form-group">
+                <input type="text" id="fullname" name="fullname" placeholder="Имя и фамилия" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder="Телефон">
+            </div>
+            <div class="form-group">
+                <textarea id="question" name="question" placeholder="Ваш вопрос или предпочтительный формат работы" rows="4"></textarea>
+            </div>
+            <button type="submit" class="signup-btn">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Модальные окна для форм записи -->
+    <div class="modal" id="signup-modal">
         <div class="modal-content">
-
-            <span class="close-btn">&times;</span> <!-- Кнопка закрытия -->
-
-            <h2>Регистрация</h2>
-            <form id="registrationForm"   action="https://formspree.io/f/mgvyqrbk" 
-                method="POST">
-                <input type="hidden" name="_subject" value="Новая регистрация - Хочу быть как Роналду!">
-                <input type="hidden" name="_language" value="ru">
-
-                <div class="form-group">
-                    <label for="lastName">Фамилия:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="firstName">Имя:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                
-                
-                <div class="form-group">
-                    <label for="middleName">Отчество:</label>
-                    <input type="text" id="middleName" name="middleName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Номер телефона:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <button type="submit">Отправить</button>
+            <span class="close-modal">&times;</span>
+            <h3>Записаться на консультацию</h3>
+            <form class="signup-form">
+                <!-- Поля формы аналогичные основной -->
+                <button type="submit">Отправить заявку</button>
             </form>
         </div>
     </div>
-    
-    <!-- Сообщение об успехе -->
-    <div id="successMessage" class="success-message">
-        Форма успешно заполнена!
-    </div>
-    
 
-        <!-- Это скрипт для отправки -->
-    <script>
-
-            // Открытие модального окна при клике на кнопку
-            document.getElementById('openFormBtn').addEventListener('click', function() {
-                document.getElementById('formModal').style.display = 'flex';
-            });
-                // Открытие формы
-            document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Проверка заполнения всех полей
-            const form = e.target;
-            const formData = new FormData(form);
-            
-            // Валидация
-            let isValid = true;
-            form.querySelectorAll('[required]').forEach(field => {
-                if (!field.value.trim()) isValid = false;
-            });
-            
-            if (!isValid) {
-                alert('Пожалуйста, заполните все поля!');
-                return;
-            }
-            
-            // Отправка через Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: new URLSearchParams(formData),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Закрываем форму
-                    document.getElementById('formModal').style.display = 'none';
-                    
-                    // Показываем сообщение об успехе
-                    const successMessage = document.getElementById('successMessage');
-                    successMessage.style.display = 'block';
-                    
-                    // Через 1 секунду скрываем сообщение
-                    setTimeout(function() {
-                        successMessage.style.display = 'none';
-                        form.reset(); // Очищаем форму
-                    }, 1000);
-                } else {
-                    throw new Error('Ошибка отправки формы');
-                }
-            })
-            .catch(error => {
-                alert('Произошла ошибка: ' + error.message);
-            });
-        });
-
-
-        // Закрытие формы при клике на крестик
-        document.querySelector('.close-btn').addEventListener('click', function() {
-            document.getElementById('formModal').style.display = 'none';
-        });
-
-        // Закрытие при клике вне формы
-        document.getElementById('formModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
-        });
-
-        // Закрытие по ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.getElementById('formModal').style.display = 'none';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
