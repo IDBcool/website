@@ -5,7 +5,7 @@ body {
     padding: 0;
     color: #333;
     line-height: 1.6;
-    padding-top: 50px; /* Для фиксированной шапки */
+    padding-top: 100px; /* Для фиксированной шапки */ 
 }
 
 /* 1. Контактная панель */
@@ -13,7 +13,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     background-color: #2c3e50;
     color: white;
     display: flex;
@@ -34,13 +34,19 @@ body {
 }
 
 .signup-btn {
+    margin-left: 5px;
     background-color: #e74c3c;
     color: white;
     border: none;
     padding: 8px 15px;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+
+    font-family: 'Arial', sans-serif; /* Пример шрифта */
+    font-weight: bold; /* Жирность (normal, bold, 100-900) */
+    font-size: 30px; /* Размер текста */
+
 }
 
 .signup-btn:hover {
@@ -62,8 +68,11 @@ body {
 
 .hero-image img {
     max-width: 100%;
+    height: auto;
+    width: 60%;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-left: 20%; /* Отступ слева - регулируйте значение */
 }
 
 .hero-content {
